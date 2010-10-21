@@ -113,6 +113,8 @@ GetHomeDir(
 	sprintf (dest, "%s%s", ptr1, (ptr2) ? ptr2 : "");
     else
 	*dest = '\0';
+#elif defined(bionic)
+sprintf(dest, "%s", "/data/local/misc");
 #else
 #ifdef X_NEEDS_PWPARAMS
     _Xgetpwparams pwparams;
